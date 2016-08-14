@@ -13,7 +13,11 @@ galaxy_info:
     - jessie
   - name: Fedora
     versions:
-    - all
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
   - name: Ubuntu
     versions:
     - xenial
