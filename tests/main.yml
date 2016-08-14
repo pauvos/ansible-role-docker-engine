@@ -18,3 +18,4 @@
       command: docker --version
       register: installed_version
       failed_when: "latest_version not in installed_version.stdout"
+      changed_when: false
