@@ -11,16 +11,7 @@ Works with with:
 
 ## Get the role
 
-Add role to your requirements.yml (not a galaxy role yet):
-
-    - src: https://github.com/pauvos/ansible-role-docker-engine.git
-      version: master
-      name: pauvos.docker-engine
-
-Install role:
-
-    ansible-galaxy install -r requirements.yml -p roles/
-
+    ansible-galaxy install pauvos.docker-engine
 
 ## Example Playbook
 
