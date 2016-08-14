@@ -13,5 +13,5 @@ before_install:
   - docker pull chmuul/ansible:${OS}
 
 script:
-  - docker run -t chmuul/ansible:${OS} ansible-playbook -i tests/inventory tests/main.yml --syntax-check
-  - docker run -t chmuul/ansible:${OS} ansible-playbook -i tests/inventory tests/main.yml
+  - docker run -t -w /site -v $(pwd):/site chmuul/ansible:${OS} ansible-playbook -i tests/inventory tests/main.yml --syntax-check
+  - docker run -t -w /site -v $(pwd):/site chmuul/ansible:${OS} ansible-playbook -i tests/inventory tests/main.yml
