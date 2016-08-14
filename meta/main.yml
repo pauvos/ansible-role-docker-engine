@@ -10,14 +10,14 @@ galaxy_info:
     - 7
   - name: Debian
     versions:
-    - 8
+    - jessie
   - name: Fedora
     versions:
     - 24
   - name: Ubuntu
     versions:
-    - 16.04
+    - xenial
   galaxy_tags:
     - docker
-    - docker-engine
     - system
+dependencies: []
