@@ -15,7 +15,7 @@ Add role to your requirements.yml (not a galaxy role yet):
 
     - src: https://github.com/pauvos/ansible-role-docker-engine.git
       version: master
-      name: chmuul.docker-engine
+      name: pauvos.docker-engine
 
 Install role:
 
@@ -28,7 +28,7 @@ Install role:
     - hosts: docker-hosts
       become: true
       roles:
-        - { role: chmuul.docker-engine }
+        - { role: pauvos.docker-engine }
 
 ## Role Variables
 
