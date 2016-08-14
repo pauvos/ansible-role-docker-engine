@@ -1,0 +1,13 @@
+build:
+  image: chmuul/ansible:$$OS
+  pull: true
+  commands:
+    - ansible-playbook -i tests/inventory tests/main.yml --syntax-check
+    - ansible-playbook -i tests/inventory tests/main.yml
+    - docker --version
+matrix:
+  OS:
+    - ubuntu-16.04
+    - fedora-24
+    - debian-8
+    - centos-7

@@ -1,0 +1,19 @@
+---
+- name: install docker engine with apt
+  include: packages-apt.yml
+  when: ansible_pkg_mgr == "apt"
+
+- name: install docker engine with yum
+  include: packages-yum.yml
+  when: ansible_pkg_mgr == "yum"
+
+- name: install docker engine with dnf
+  include: packages-dnf.yml
+  when: ansible_pkg_mgr == "dnf"
+
+- name: start docker service
+  service:
+    name: docker
+    enabled: yes
+    state: started
+  when: ansible_virtualization_type != "docker" # don't start docker in docker

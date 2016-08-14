@@ -1,0 +1,20 @@
+---
+- name: run tests
+  hosts: localhost
+  become: true
+  roles:
+    - { role: chmuulNet.docker-engine }
+  tasks:
+    - name: get url of the latest docker release
+      uri:
+        url: https://github.com/docker/docker/releases/latest
+      register: docker_latest
+
+    - name: extract version number from url
+      set_fact:
+        latest_version: "{{ docker_latest.url | regex_replace('.*/tag/v(.*)$', '\\1') }}"
+
+    - name: test if docker version {{ latest_version }} is installed
+      command: docker --version
+      register: installed_version
+      failed_when: "latest_version not in installed_version.stdout"
