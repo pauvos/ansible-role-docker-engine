@@ -1,4 +1,4 @@
-# Ansible Role: docker-engine [![Build Status](https://drone.chmuul.net/api/badges/chmuul.net/ansible-role-docker-engine/status.svg)](https://drone.chmuul.net/chmuul.net/ansible-role-docker-engine)
+# Ansible Role: docker-engine [![Build Status](https://travis-ci.org/pauvos/ansible-role-docker-engine.svg?branch=master)](https://travis-ci.org/pauvos/ansible-role-docker-engine)
 
 Installs docker-engine with official packages from [dockerproject.org](https://dockerproject.org/).
 
