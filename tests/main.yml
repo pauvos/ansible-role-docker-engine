@@ -3,7 +3,7 @@
   hosts: localhost
   become: true
   roles:
-    - { role: chmuulNet.docker-engine }
+    - { role: chmuul.docker-engine }
   tasks:
     - name: get url of the latest docker release
       uri:
