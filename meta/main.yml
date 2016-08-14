@@ -3,7 +3,7 @@ galaxy_info:
   author: Paul Voss
   description: Installs docker-engine with official packages from dockerproject.org.
   license: MIT
-  min_ansible_version: 2.0
+  min_ansible_version: 1.9
   platforms:
   - name: EL
     versions:
