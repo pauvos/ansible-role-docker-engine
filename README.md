@@ -4,10 +4,10 @@ Installs docker-engine with official packages from [dockerproject.org](https://d
 
 Works with with:
 
-* debian-8
-* ubuntu-16.04
-* fedora-24 (other versions should work too)
-* centos-7
+* CentOS 7
+* Debian 7-8
+* Fedora 20-24
+* Ubuntu 14.04, 16.04
 
 ## Get the role
 

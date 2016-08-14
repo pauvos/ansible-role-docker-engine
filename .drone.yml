@@ -7,6 +7,8 @@ build:
 matrix:
   OS:
     - ubuntu-16.04
-    - fedora-24
     - debian-8
+    - fedora-24
     - centos-7
+    - ubuntu-14.04
+    - debian-7
