@@ -4,7 +4,6 @@ build:
   commands:
     - ansible-playbook -i tests/inventory tests/main.yml --syntax-check
     - ansible-playbook -i tests/inventory tests/main.yml
-    - docker --version
 matrix:
   OS:
     - ubuntu-16.04
