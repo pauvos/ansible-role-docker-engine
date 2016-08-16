@@ -18,10 +18,10 @@ before_install:
   - docker pull chmuul/ansible:${OS}
 
 script:
-  - docker run -t -w /site -v $(pwd):/site chmuul/ansible:${OS} ansible-playbook -i tests/inventory tests/main.yml --syntax-check
-  - docker run -t -w /site -v $(pwd):/site chmuul/ansible:${OS} ansible-playbook -i tests/inventory tests/main.yml --syntax-check --extra-vars "docker_engine_release_channel=experimental"
-  - docker run -t -w /site -v $(pwd):/site chmuul/ansible:${OS} ansible-playbook -i tests/inventory tests/main.yml
-  - docker run -t -w /site -v $(pwd):/site chmuul/ansible:${OS} ansible-playbook -i tests/inventory tests/main.yml --extra-vars "docker_engine_release_channel=experimental"
+  - docker run -t --rm -w /site -v $(pwd):/site chmuul/ansible:${OS} ansible-playbook -i tests/inventory tests/main.yml --syntax-check
+  - docker run -t --rm -w /site -v $(pwd):/site chmuul/ansible:${OS} ansible-playbook -i tests/inventory tests/main.yml --syntax-check --extra-vars "docker_engine_release_channel=experimental"
+  - docker run -t --rm -w /site -v $(pwd):/site chmuul/ansible:${OS} ansible-playbook -i tests/inventory tests/main.yml
+  - docker run -t --rm -w /site -v $(pwd):/site chmuul/ansible:${OS} ansible-playbook -i tests/inventory tests/main.yml --extra-vars "docker_engine_release_channel=experimental"
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
