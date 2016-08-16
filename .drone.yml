@@ -1,9 +1,16 @@
 build:
-  image: chmuul/ansible:$$OS
-  pull: true
-  commands:
-    - ansible-playbook -i tests/inventory tests/main.yml --syntax-check
-    - ansible-playbook -i tests/inventory tests/main.yml
+  rc_main:
+    image: chmuul/ansible:$$OS
+    pull: true
+    commands:
+      - ansible-playbook -i tests/inventory tests/main.yml --syntax-check
+      - ansible-playbook -i tests/inventory tests/main.yml
+  rc_experimental:
+    image: chmuul/ansible:$$OS
+    commands:
+      - ansible-playbook -i tests/inventory tests/main.yml --syntax-check --extra-vars "docker_engine_release_channel=experimental"
+      - ansible-playbook -i tests/inventory tests/main.yml --extra-vars "docker_engine_release_channel=experimental"
+
 matrix:
   OS:
     - ubuntu-16.04

@@ -24,14 +24,14 @@
 
 - name: add docker repository (ubuntu-trusty)
   apt_repository:
-    repo: 'deb https://apt.dockerproject.org/repo ubuntu-trusty main'
+    repo: 'deb https://apt.dockerproject.org/repo ubuntu-trusty "{{ docker_engine_release_channel }}"'
     filename: docker
     update_cache: yes
   when: ansible_distribution == "Ubuntu" and ansible_distribution_release == "trusty"
 
 - name: add docker repository (ubuntu-xenial)
   apt_repository:
-    repo: 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
+    repo: 'deb https://apt.dockerproject.org/repo ubuntu-xenial "{{ docker_engine_release_channel }}"'
     filename: docker
     update_cache: yes
   when: ansible_distribution == "Ubuntu" and ansible_distribution_release == "xenial"
@@ -45,14 +45,14 @@
 
 - name: add docker repository (debian-wheezy)
   apt_repository:
-    repo: 'deb https://apt.dockerproject.org/repo debian-wheezy main'
+    repo: 'deb https://apt.dockerproject.org/repo debian-wheezy "{{ docker_engine_release_channel }}"'
     filename: docker
     update_cache: yes
   when: ansible_distribution == "Debian" and ansible_distribution_release == "wheezy"
 
 - name: add docker repository (debian-jessie)
   apt_repository:
-    repo: 'deb https://apt.dockerproject.org/repo debian-jessie main'
+    repo: 'deb https://apt.dockerproject.org/repo debian-jessie "{{ docker_engine_release_channel }}"'
     filename: docker
     update_cache: yes
   when: ansible_distribution == "Debian" and ansible_distribution_release == "jessie"

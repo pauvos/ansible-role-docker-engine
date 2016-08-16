@@ -6,7 +6,7 @@
   yum_repository:
     name: dockerrepo
     description: Docker Repository
-    baseurl: https://yum.dockerproject.org/repo/main/fedora/$releasever/
+    baseurl: https://yum.dockerproject.org/repo/"{{ docker_engine_release_channel }}"/fedora/$releasever/
     gpgkey: https://yum.dockerproject.org/gpg
     gpgcheck: yes
     file: docker
