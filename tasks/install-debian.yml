@@ -7,14 +7,6 @@
   with_items:
     - apt-transport-https
     - ca-certificates
-    - curl
-
-- name: install packages for stretch/jessie
-  apt:
-    name: "{{ item }}"
-    update_cache: yes
-    cache_valid_time: "{{ docker_engine_cache_valid_time }}"
-  with_items:
     - gnupg2
     - software-properties-common
 
