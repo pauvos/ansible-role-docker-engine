@@ -10,7 +10,7 @@ stage('Test') {
   debianjessie: {
     node {
       checkout scm
-      withEnv(["OS=debian-8","pwd=${pwd}"]) {
+      withEnv(["OS=debian-8","PWD=${WORKSPACE}"]) {
         sh 'make test'
       }
     }
