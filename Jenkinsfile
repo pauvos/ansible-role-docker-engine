@@ -22,7 +22,7 @@ stage('Test') {
         sh 'make test'
       }
     }
-  }
+  },
   fedora24: {
     node {
       checkout scm
