@@ -1,7 +1,9 @@
 stage('Test') {
   parallel ubuntuxenial: {
     node {
+      stage 'checkout'
       checkout scm
+      stage 'make test'
       withEnv(["OS=ubuntu-16.04"]) {
         sh 'make test'
       }
