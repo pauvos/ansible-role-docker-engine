@@ -1,0 +1,35 @@
+---
+- name: install python2-dnf
+  raw: dnf install -y python2-dnf
+
+- name: purge old docker packages
+  dnf:
+    name: "{{ item }}"
+    state: absent
+  with_items:
+    - docker
+    - docker-common
+    - container-selinux
+    - docker-selinux
+    - docker-engine
+
+- name: add docker-ce repository
+  yum_repository:
+    name: docker-ce
+    description: Docker Repository
+    baseurl: https://download.docker.com/linux/fedora/$releasever/$basearch/stable
+    gpgkey: https://download.docker.com/linux/fedora/gpg
+    gpgcheck: yes
+    file: docker
+#- name: add docker repository (fedora)
+#   yum_repository:
+#     name: dockerrepo
+#     description: Docker Repository
+#     baseurl: https://yum.dockerproject.org/repo/"{{ docker_engine_release_channel }}"/fedora/$releasever/
+#     gpgkey: https://yum.dockerproject.org/gpg
+#     gpgcheck: yes
+#     file: docker
+#
+- name: install docker-ce
+  dnf:
+    name: docker-ce
