@@ -1,0 +1,17 @@
+---
+- name: purge old docker packages
+  apt:
+    name: "{{ item }}"
+    state: absent
+    purge: yes
+  with_items:
+    - docker.io
+    - lxc-docker
+    - docker
+    - docker-engine
+
+- name: remove old docker-engine apt key
+  apt_key:
+    keyserver: hkp://p80.pool.sks-keyservers.net:80
+    id: 58118E89F3A912897C070ADBF76221572C52609D
+    state: absent

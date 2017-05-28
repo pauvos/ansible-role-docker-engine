@@ -8,8 +8,6 @@ env:
   - OS: debian-8
   - OS: fedora-24
   - OS: centos-7
-  - OS: ubuntu-14.04
-  - OS: debian-7
 
 services:
   - docker
@@ -20,7 +18,6 @@ before_install:
 script:
   - docker run -t --rm -w /site -v $(pwd):/site chmuul/ansible:${OS} ansible-playbook -i tests/inventory tests/main.yml --syntax-check
   - docker run -t --rm -w /site -v $(pwd):/site chmuul/ansible:${OS} ansible-playbook -i tests/inventory tests/main.yml
-  - docker run -t --rm -w /site -v $(pwd):/site chmuul/ansible:${OS} ansible-playbook -i tests/inventory tests/main.yml --extra-vars "docker_engine_release_channel=experimental"
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

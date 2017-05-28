@@ -2,12 +2,12 @@
 
 Installs docker-engine with official packages from [dockerproject.org](https://dockerproject.org/).
 
-Works with with:
+Tested with:
 
 * CentOS 7
-* Debian 7, 8
-* Fedora 20-24
-* Ubuntu 14.04, 16.04
+* Debian 8
+* Fedora 24
+* Ubuntu 16.04
 
 ## Get the role
 

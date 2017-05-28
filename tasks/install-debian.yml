@@ -1,0 +1,36 @@
+---
+- name: install packages
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+    cache_valid_time: "{{ docker_engine_cache_valid_time }}"
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+
+- name: install packages for stretch/jessie
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+    cache_valid_time: "{{ docker_engine_cache_valid_time }}"
+  with_items:
+    - gnupg2
+    - software-properties-common
+
+- name: add docker apt key
+  apt_key:
+    url: 'https://download.docker.com/linux/debian/gpg'
+    state: present
+
+- name: add docker repository
+  apt_repository:
+    repo: 'deb [arch=amd64] https://download.docker.com/linux/debian {{ ansible_distribution_release }} {{ docker_engine_release_channel }}'
+    filename: docker
+    update_cache: yes
+
+- name: install docker-ce
+  apt:
+    name: docker-ce
+    update_cache: yes
+    cache_valid_time: "{{ docker_engine_cache_valid_time }}"
