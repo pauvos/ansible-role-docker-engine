@@ -1,6 +1,6 @@
 stage('Test') {
   parallel ubuntuxenial: {
-    node('any') {
+    node {
       checkout scm
       withEnv(["OS=ubuntu-16.04"]) {
         sh 'make test'
@@ -8,7 +8,7 @@ stage('Test') {
     }
   },
   debianjessie: {
-    node('any') {
+    node {
       checkout scm
       withEnv(["OS=debian-8"]) {
         sh 'make test'
