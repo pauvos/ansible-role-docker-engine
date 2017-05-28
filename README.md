@@ -26,4 +26,3 @@ Tested with:
 Available variables are listed below, along with default values:
 
     docker_engine_cache_valid_time: 84600   # cache_valid_time for apt
-    docker_engine_release_channel: main     # set to "experimental" for fancy docker swarm features
