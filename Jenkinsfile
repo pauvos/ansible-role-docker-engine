@@ -14,5 +14,13 @@ stage('Test') {
         sh 'make test'
       }
     }
+  },
+  centos7: {
+    node {
+      checkout scm
+      withEnv(["OS=centos-7"]) {
+        sh 'make test'
+      }
+    }
   }
 }
