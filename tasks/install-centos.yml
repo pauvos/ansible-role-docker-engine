@@ -33,6 +33,11 @@
     name: docker-ce
     update_cache: yes
 
+- name: create docker config dir
+  file:
+    path: /etc/docker
+    state: directory
+
 - name: set storage driver
   blockinfile:
     path: /etc/docker/daemon.json
