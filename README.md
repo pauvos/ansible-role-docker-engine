@@ -1,6 +1,6 @@
 # Ansible Role: docker-engine [![Build Status](https://travis-ci.org/pauvos/ansible-role-docker-engine.svg?branch=master)](https://travis-ci.org/pauvos/ansible-role-docker-engine)
 
-Installs docker-engine with official packages from [dockerproject.org](https://dockerproject.org/).
+Installs *docker-ce* with official packages from [dockerproject.org](https://dockerproject.org/).
 
 Tested with:
 
@@ -9,7 +9,7 @@ Tested with:
 * Fedora 24
 * Ubuntu 16.04
 
-## Get the role
+## Install
 
     ansible-galaxy install pauvos.docker-engine
 
