@@ -1,6 +1,6 @@
 # Ansible Role: docker-engine [![Build Status](https://travis-ci.org/pauvos/ansible-role-docker-engine.svg?branch=master)](https://travis-ci.org/pauvos/ansible-role-docker-engine)
 
-Installs *docker-ce* with official packages from [dockerproject.org](https://dockerproject.org/).
+Installs *docker-ce* with official packages from [download.docker.com](https://download.docker.com/).
 
 Tested with:
 
