@@ -1,6 +1,6 @@
-all: install test
+all: before_install test
 
-install:
+before_install:
 	docker pull chmuul/ansible:${OS}
 
 test:
