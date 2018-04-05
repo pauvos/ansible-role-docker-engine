@@ -1,5 +1,7 @@
 # Changelog
 
+##### 1.1.1 fix version comparison
+
 ##### 1.1.0 switched from docker-engine to docker-ce packages
 * dropped support for alpine and debian 7
 
