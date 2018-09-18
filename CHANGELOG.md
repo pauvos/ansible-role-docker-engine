@@ -1,5 +1,7 @@
 # Changelog
 
+##### 1.1.2 fix name of the role in the readme file
+
 ##### 1.1.1 fix version comparison
 
 ##### 1.1.0 switched from docker-engine to docker-ce packages

@@ -3,7 +3,7 @@
   hosts: localhost
   become: true
   roles:
-    - { role: pauvos.docker-engine }
+    - { role: pauvos.docker_engine }
   tasks:
     - name: test if docker is installed
       command: docker --version

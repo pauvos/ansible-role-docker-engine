@@ -11,7 +11,7 @@ Tested with:
 
 ## Install
 
-    ansible-galaxy install pauvos.docker-engine
+    ansible-galaxy install pauvos.docker_engine
 
 ## Example Playbook
 
@@ -19,7 +19,7 @@ Tested with:
     - hosts: docker-hosts
       become: true
       roles:
-        - { role: pauvos.docker-engine }
+        - { role: pauvos.docker_engine }
 
 ## Role Variables
 
