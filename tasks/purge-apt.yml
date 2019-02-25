@@ -1,14 +1,13 @@
 ---
 - name: purge old docker packages
   apt:
-    name: "{{ item }}"
+    name:
+      - docker.io
+      - lxc-docker
+      - docker
+      - docker-engine
     state: absent
     purge: yes
-  with_items:
-    - docker.io
-    - lxc-docker
-    - docker
-    - docker-engine
 
 - name: remove old docker-engine apt key
   apt_key:
