@@ -19,6 +19,10 @@
   include: install-fedora.yml
   when: ansible_distribution == "Fedora"
 
+- name: manage docker daemon configuration
+  include: daemon-conf.yml
+  when: docker_engine_daemon_conf is defined
+
 - name: start docker service
   service:
     name: docker

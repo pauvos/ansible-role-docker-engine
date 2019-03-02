@@ -1,0 +1,5 @@
+- name: restart docker
+  service:
+    name: docker
+    state: restarted
+  when: ansible_virtualization_type != "docker" # don't start docker in docker

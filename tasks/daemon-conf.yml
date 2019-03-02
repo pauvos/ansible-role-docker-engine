@@ -1,0 +1,24 @@
+- name: ensure config directory exists
+  file:
+    path: /etc/docker
+    state: directory
+    owner: root
+    group: root
+    mode: 0700
+
+- name: copy daemon.json
+  template:
+    src: templates/daemon.json.j2
+    dest: /etc/docker/daemon.json
+    owner: root
+    group: root
+    mode: 0600
+  notify:
+    - restart docker
+  when: docker_engine_daemon_conf is not none
+
+- name: remove daemon.json if conf explicitly set to null
+  file:
+    path: /etc/docker/daemon.json
+    state: absent
+  when: docker_engine_daemon_conf is none

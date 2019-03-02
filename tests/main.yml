@@ -9,6 +9,13 @@
       command: docker --version
       register: docker_version
       changed_when: false
-
     - name: docker version is "{{ docker_version.stdout }}"
       debug: msg="{{ docker_version }}"
+    - name: check daemon options
+      slurp:
+        src: /etc/docker/daemon.json
+      register: docker_daemon
+    - assert:
+        that:
+          - docker_version.rc == 0
+          - docker_daemon['content'] == "ewogICAgInVzZXJucy1yZW1hcCI6ICJkZWZhdWx0Igp9Cg=="
