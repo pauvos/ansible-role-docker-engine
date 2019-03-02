@@ -11,12 +11,10 @@
 
 - name: install requirements
   yum:
-    name: "{{ item }}"
+    name:
+      - device-mapper-persistent-data
+      - lvm2
     update_cache: yes
-  with_items:
-#    - yum-utils
-    - device-mapper-persistent-data
-    - lvm2
 
 - name: add docker-ce repository (centos7)
   yum_repository:
