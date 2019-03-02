@@ -1,8 +1,4 @@
 ---
-- name: install python2-dnf
-  yum:
-    name: python2-dnf
-
 - name: purge old docker packages
   dnf:
     name:
