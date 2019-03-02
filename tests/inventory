@@ -1,1 +1,4 @@
 localhost ansible_connection=local
+
+[all:vars]
+docker_engine_daemon_conf={"userns-remap": "default"}
