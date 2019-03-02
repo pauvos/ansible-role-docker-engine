@@ -3,15 +3,19 @@
   yum:
     name:
       - docker
+      - docker-client
+      - docker-client-latest
       - docker-common
-      - container-selinux
-      - docker-selinux
+      - docker-latest
+      - docker-latest-logrotate
+      - docker-logrotate
       - docker-engine
     state: absent
 
 - name: install requirements
   yum:
     name:
+      - yum-utils
       - device-mapper-persistent-data
       - lvm2
     update_cache: yes
