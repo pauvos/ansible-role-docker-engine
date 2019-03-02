@@ -1,14 +1,13 @@
 ---
 - name: install packages
   apt:
-    name: "{{ item }}"
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - gnupg2
+      - software-properties-common
     update_cache: yes
     cache_valid_time: "{{ docker_engine_cache_valid_time }}"
-  with_items:
-    - apt-transport-https
-    - ca-certificates
-    - gnupg2
-    - software-properties-common
 
 - name: add docker apt key
   apt_key:

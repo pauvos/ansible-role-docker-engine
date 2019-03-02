@@ -1,14 +1,13 @@
 ---
 - name: purge old docker packages
   yum:
-    name: "{{ item }}"
+    name:
+      - docker
+      - docker-common
+      - container-selinux
+      - docker-selinux
+      - docker-engine
     state: absent
-  with_items:
-    - docker
-    - docker-common
-    - container-selinux
-    - docker-selinux
-    - docker-engine
 
 - name: install requirements
   yum:
