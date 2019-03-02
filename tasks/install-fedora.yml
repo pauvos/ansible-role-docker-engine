@@ -1,14 +1,20 @@
 ---
 - name: install python2-dnf
-  raw: dnf install -y python2-dnf
+  yum:
+    name: python2-dnf
 
 - name: purge old docker packages
   dnf:
     name:
       - docker
+      - docker-client
+      - docker-client-latest
       - docker-common
-      - container-selinux
+      - docker-latest
+      - docker-latest-logrotate
+      - docker-logrotate
       - docker-selinux
+      - docker-engine-selinux
       - docker-engine
     state: absent
 
