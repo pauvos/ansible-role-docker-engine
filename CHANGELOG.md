@@ -1,5 +1,7 @@
 # Changelog
 
+##### 1.1.3 remove deprecation warnings of package modules (thanks @tomgoren)
+
 ##### 1.1.2 fix name of the role in the readme file
 
 ##### 1.1.1 fix version comparison
